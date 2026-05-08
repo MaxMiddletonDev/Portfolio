@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'PixelTandysoft';
+  src: url('fonts/Pixel.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif; 
+}
+
+.gridBackground {
+  background-color: #ffffff; 
+  background-image: 
+    linear-gradient(#e5e7eb 1px, transparent 1px), 
+    linear-gradient(90deg, #e5e7eb 1px, transparent 1px);
+  background-size: 40px 40px; 
+  min-height: 100vh; 
+}
+
+#heroSection {
+  display: flex;
+  align-items: center;     
+  justify-content: center;   
+  height: 100vh;            
+  gap: 60px;                 
+  padding: 0 20px;          
+  box-sizing: border-box;
+  animation: float 3s ease-in-out infinite;
+}
+
+#heroText {
+  font-size: 4rem;          
+  font-weight: 700;         
+  color: #333333;           
+  margin: 0;
+  line-height: 1;
+  font-family: 'PixelTandysoft', Roboto;
+  font-weight: normal;
+  text-shadow: 4px 4px 0px #d3d3d3;
+}
+
+#heroImage img {
+  max-width: 400px;       
+  width: 100%;
+  height: auto;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 768px) {
+  #heroSection {
+    flex-direction: column; 
+    text-align: center;     
+    gap: 20px;             
+  }
+  
+  #heroText {
+    font-size: 3rem; 
+  }
+}
