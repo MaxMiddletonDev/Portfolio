@@ -11,6 +11,7 @@ body {
 }
 
 .gridBackground {
+  position: relative;
   background-color: #ffffff; 
   background-image: 
     linear-gradient(#e5e7eb 1px, transparent 1px), 
@@ -20,14 +21,15 @@ body {
 }
 
 #heroSection {
+  position: relative;
   display: flex;
   align-items: center;     
-  justify-content: center;   
+  justify-content: center; 
+  flex-direction: column;  
   height: 100vh;            
   gap: 60px;                 
   padding: 0 20px;          
   box-sizing: border-box;
-  animation: float 3s ease-in-out infinite;
 }
 
 #heroText {
@@ -39,12 +41,30 @@ body {
   font-family: 'PixelTandysoft', Roboto;
   font-weight: normal;
   text-shadow: 4px 4px 0px #d3d3d3;
+  animation: float 3s ease-in-out infinite;
 }
 
 #heroImage img {
   max-width: 400px;       
   width: 100%;
   height: auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+#learnMoreBtn {
+  display: inline-block;
+  font-family: 'PixelTandysoft', Roboto;
+  font-size: 1rem;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #000000;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+#learnMoreBtn:hover {
+  background-color: #f0f0f0;
 }
 
 @keyframes float {
@@ -68,5 +88,11 @@ body {
   
   #heroText {
     font-size: 3rem; 
+  }
+
+  #learnMoreBtn {
+    font-size: 0.8rem;
+    bottom: 10px;
+    padding: 8px 16px;
   }
 }
