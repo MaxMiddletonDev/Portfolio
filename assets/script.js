@@ -12,7 +12,8 @@ document.querySelector('.card').addEventListener('click', function() {
 const options = {
     '.workBtn': '.workMsg',
     '.hobbyBtn': '.hobbyMsg',
-    '.originBtn': '.originMsg'
+    '.originBtn': '.originMsg',
+    '.statBtn': '.statMsg'
 };
 
 Object.entries(options).forEach(([btnClass, msgClass]) => {
@@ -26,6 +27,22 @@ Object.entries(options).forEach(([btnClass, msgClass]) => {
         targetMsg.style.display = 'block';
     });
 });
+
+function initEnergyDrinkCounter() {
+    const drinkDisplay = document.getElementById('energyDrinkCount');
+    const startDate = new Date('2026-05-01'); 
+    const currentDate = new Date();
+    const timeDiff = currentDate - startDate;
+    const msPerCan = 120960000; 
+
+    let count = Math.floor(timeDiff / msPerCan);
+
+    if (count < 0) count = 0;
+
+    drinkDisplay.innerText = count;
+}
+
+initEnergyDrinkCounter()
 
 const place = 'Stafford';
 
