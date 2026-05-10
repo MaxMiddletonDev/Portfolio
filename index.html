@@ -11,13 +11,16 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+    <div class="progressContainer">
+        <div class="progressBar" id="myBar"></div>
+    </div>
     <div class="gridBackground">
         <div id="heroSection">
             <div id="heroText">&lt;max's portfolio/&gt;</div>
             <div id="heroImage">
                 <img src="assets/images/Computer.png" alt="Max's Image">
             </div>
-            <a href="#about" id="learnMoreBtn">LEARN MORE</a>
+            <a href="#about" class="btn">LEARN MORE</a>
         </div>
 
         <section id="about">
@@ -32,7 +35,6 @@
                                 </div>
                                 <div class="cardBack">
                                     <div class="signatureContainer">
-                                        <img src="assets/animations/motorbikeme.gif" alt="Motorbike Pixel Art" class="backGif">
                                         <img src="assets/images/signature.png" alt="Max's Signature">
                                         <p class="note">Max was here.</p>
                                     </div>
@@ -50,7 +52,8 @@
                                 <strong>Swansea University</strong>. I love building systems that are not just 
                                 functional but genuinely efficient and creative.
                             </p>
-                            <a href="#skillsAndExperience" id="learnMoreBtn">READ MORE</a>
+                            <a href="#skillsAndExperience" class="btn">READ MORE</a>
+                            <a href="assets/MaxMiddletonCV.pdf" download class="btn">DOWNLOAD CV</a>
                         </div>
                     </div>
 
@@ -337,5 +340,6 @@
             </div>
         </section>
     </div>  
+    <script src="assets/script.js"></script>
 </body>
 </html>
