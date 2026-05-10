@@ -636,11 +636,10 @@ body {
   margin: 40px auto 0 auto;
   width: fit-content;
   align-self: center;
-  justify-content: center;
 }
 
 #weatherMe {
-  width: 80px;
+  width: 100px;
   height: auto;
   image-rendering: pixelated;
 }
