@@ -5,11 +5,12 @@ window.onscroll = function() {
     document.getElementById("myBar").style.width = scrolled + "%";
 };
 
+const apiKey = typeof token !== 'undefined' ? token.API_TOKEN : 'apiKey';
 const place = 'Stafford';
 
 async function updateWeather() {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${place}&units=metric&appid=${token.API_TOKEN}`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${place}&units=metric&appid=${apiKey}`);
         const data = await response.json();
 
         const temp = Math.round(data.main.temp);
