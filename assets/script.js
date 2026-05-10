@@ -5,14 +5,17 @@ window.onscroll = function() {
     document.getElementById("myBar").style.width = scrolled + "%";
 };
 
-const apiKey = typeof token !== 'undefined' ? token.API_TOKEN : 'apiKey';
 const place = 'Stafford';
 
 async function updateWeather() {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${place}&units=metric&appid=${apiKey}`);
-        const data = await response.json();
+        const response = await fetch(`/api/weather?city=${place}`);
 
+        if (!response.ok) {
+            throw new Error(`Server error: ${response.status}`);
+        }
+
+        const data = await response.json();
         const temp = Math.round(data.main.temp);
         const condition = data.weather[0].main.toLowerCase();
 
@@ -30,9 +33,11 @@ async function updateWeather() {
         } else if (condition.includes('sunny')) {
             gifElement.src = 'assets/images/motorbikeme.png'; 
         }
+        
     } catch (error) {
-        console.error("Weather failed to load", error);
+        console.error(error);
+        document.getElementById('desc').innerText = "Weather unavailable";
     }
 }
 
-updateWeather();
+updateWeather();;
