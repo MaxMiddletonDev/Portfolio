@@ -5,6 +5,10 @@
   font-style: normal;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -620,4 +624,48 @@ body {
 .contactItem span {
   font-family: 'PixelTandysoft', sans-serif;
   font-size: 0.8rem;
+}
+
+#weatherBox {
+  border: 2px solid #000;
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 40px auto 0 auto;
+  width: fit-content;
+  align-self: center;
+  justify-content: center;
+}
+
+#weatherMe {
+  width: 80px;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+#weatherInfo {
+  font-family: 'PixelTandysoft', sans-serif;
+  color: #000;
+}
+
+#weatherInfo p {
+  margin: 5px 0;
+}
+
+#city {
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+#temp {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#desc {
+  font-size: 0.9rem;
+  text-transform: capitalize;
 }
