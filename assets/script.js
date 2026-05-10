@@ -5,6 +5,28 @@ window.onscroll = function() {
     document.getElementById("myBar").style.width = scrolled + "%";
 };
 
+document.querySelector('.card').addEventListener('click', function() {
+    this.classList.toggle('flipped');
+});
+
+const options = {
+    '.workBtn': '.workMsg',
+    '.hobbyBtn': '.hobbyMsg',
+    '.originBtn': '.originMsg'
+};
+
+Object.entries(options).forEach(([btnClass, msgClass]) => {
+    document.querySelector(btnClass).addEventListener('click', () => {
+        document.querySelectorAll('.msg').forEach(m => {
+            m.classList.remove('active');
+            m.style.display = 'none';
+        });
+        const targetMsg = document.querySelector(msgClass);
+        targetMsg.classList.add('active');
+        targetMsg.style.display = 'block';
+    });
+});
+
 const place = 'Stafford';
 
 async function updateWeather() {

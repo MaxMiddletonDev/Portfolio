@@ -157,7 +157,7 @@ body {
   transform-style: preserve-3d;
 }
 
-.card:hover .cardInner {
+.card.flipped .cardInner {
   transform: rotateY(180deg);
 }
 
@@ -294,20 +294,7 @@ body {
     animation: typewriterReveal 3s steps(100) forwards;
 }
 
-.dialogueRow:has(.option:hover) .defaultMsg {
-    display: none;
-}
-
-.dialogueRow:has(.workBtn:hover) .workMsg {
-    display: block;
-    animation: typewriterReveal 3s steps(100) forwards;
-}
-
-.dialogueRow:has(.hobbyBtn:hover) .hobbyMsg {
-    display: block;
-    animation: typewriterReveal 3s steps(100) forwards;
-}
-.dialogueRow:has(.originBtn:hover) .originMsg {
+.msg.active {
     display: block;
     animation: typewriterReveal 3s steps(100) forwards;
 }
